@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+ <head>
+ <title>Form-Validation</title>
+ </head>
+ <body>
+ <p>What type of car would you like to buy?</p>
+<form id="myForm">
+ <input type="radio" id="Four" name="ChooseOne" value="Proton"><label
+for="Four">Proton </label> <input type="radio" id="Four1" name="ChooseOne"
+value="Honda"><label for="Four1">Honda</label> <input type="radio" id="Four2"
+name="ChooseOne" value="Ferri"><label for="Four2">Ferri</label> <input type="radio"
+id="Four3" name="ChooseOne" value="Ford"><label for="Four3">Ford</label>
+ <p>What color do you want in your car?</p>
+ <div><label>Choose One </label>
+<select>
+<option value="Yellow">Yellow</option>
+<option value="Blue">Blue</option>
+<option value="Red">Red</option>
+</select>
+ </div><br>
+ <label for="One">Others</label> <input type="text" id="One" name="Others">
+ <p>Enter other specification for your preferred car:</p>
+ <div>
+<textarea></textarea>
+ </div>
+ <p>Tell us how to get in touch with you:</p>
+ <label for="One">Name : </label> <input type="text" id="One"
+name="Name"><br><br>
+ <label for="One">Telephone : </label> <input type="text" id="One"
+name="Name"><br><br>
+ <input type="email" placeholder="username@gmail.com" id="e">
+
+ <input type="checkbox" id="Fiv1e" name="ChooseMany" value="Please contact me as
+soon as possible"><label for="Fiv1e">Please contact me as soon as possible</label>
+ <p>My Mail : <a href="mailto:abc@gmail.com" style="color: blue">
+abc@gmail.com</a></p>
+<input type="submit" onclick="validate()" value="check mail"><br><br>
+ 
+<input type="submit" value="Clear" formtarget="_blank"><br><br>
+ <a href="mailto:abc@gmail.com" style="color:blueviolet">Back to mail page</a>
+
+  <input type="button" onclick="myFunction()" value="Submit form">
+</form>
+
+<script>
+function myFunction() {
+  document.getElementById("myForm").submit();
+  alert("Your form is successfully submitted..");
+}
+
+        function validate() {
+  
+            var user = document.getElementById("e").value;
+            var user2 = document.getElementById("e");
+            var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (re.test(user)) {
+                alert("Give correct emailid");
+                return true;
+            }
+            else {
+                user2.style.border = "red solid 3px";
+                return false;
+            }
+        }
+    
+</script>
+ </body>
+</html>
